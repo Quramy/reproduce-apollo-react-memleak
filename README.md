@@ -4,14 +4,29 @@ To reproduce https://github.com/apollographql/react-apollo/issues/2126 .
 
 ## Summary
 
-### 1. Not using getDataFromTree
-![](./graph_001_no_data_from_tree.png)
+I've measured heap size with 10,000 SSR request under the following condition.
+All results indicate some memory increasing(about ~100 bytes / request).
 
-### 2. Light query
-![](./graph_002_light_query.png)
+### 1. No ApolloProvider, no apollo client
 
-### 3. Large query
-![](./graph_003_heavy_query.png)
+![](./graph_000_no_client.png)
+
+### 2. No `<Query>` component
+*Only instantiating an apollo client and rendering empty `<ApolloProvider>`*
+
+![](./graph_001_no_query.png)
+
+
+### 3. Not using getDataFromTree
+*Using `<Query>` but not waiting for the result*
+
+![](./graph_002_no_data_from_tree.png)
+
+### 4. Light query
+![](./graph_003_light_query.png)
+
+### 5. Large query
+![](./graph_004_heavy_query.png)
 
 ## How to measure heap size
 
