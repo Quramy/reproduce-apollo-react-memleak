@@ -2,7 +2,16 @@
 
 To reproduce https://github.com/apollographql/react-apollo/issues/2126 .
 
-![graph_001_light_query.png](./graph_001_light_query.png)
+## Summary
+
+### 1. Not using getDataFromTree
+![](./graph_001_no_data_from_tree.png)
+
+### 2. Light query
+![](./graph_002_light_query.png)
+
+### 3. Large query
+![](./graph_003_heavy_query.png)
 
 ## How to measure heap size
 

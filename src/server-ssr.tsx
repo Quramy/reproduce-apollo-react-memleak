@@ -52,6 +52,14 @@ query {
           price,
           relatedProducts(count: 2) {
             id,
+            price,
+            relatedProducts(count: 2) {
+              id,
+              price,
+              relatedProducts(count: 2) {
+                id,
+              }
+            }
           }
         }
       }
